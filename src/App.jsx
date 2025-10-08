@@ -18,7 +18,6 @@ export const goods = [
 export const App = () => {
   const [selectedGood, setSelectedGood] = useState('Jam');
   const handleClear = () => setSelectedGood('');
-  const handleRemove = () => setSelectedGood('');
   const handleSelect = good => () => setSelectedGood(good);
 
   return (
@@ -56,7 +55,7 @@ export const App = () => {
                       data-cy="RemoveButton"
                       type="button"
                       className="button is-info"
-                      onClick={handleRemove}
+                      onClick={handleClear} // або handleRemove, якщо тримаєш окремо
                     >
                       -
                     </button>
@@ -71,7 +70,6 @@ export const App = () => {
                     </button>
                   )}
                 </td>
-
                 <td data-cy="GoodTitle" className="is-vcentered">
                   {good}
                 </td>
